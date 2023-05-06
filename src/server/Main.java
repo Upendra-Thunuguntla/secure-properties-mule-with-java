@@ -10,12 +10,11 @@ import com.sun.net.httpserver.HttpServer;
 import handlers.APIHandler;
 import handlers.RootHandler;
 
-//import handlers.RootHandler;
 
 public class Main {
 
 	public static void main(String[] args) throws Exception {
-		int port = 8080;
+		int port = 9000;
 		HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
 		server.createContext("/", new RootHandler());
 

@@ -14,6 +14,7 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 
 import pojos.Payload;
+import services.ExtentionService;
 import services.Processor;
 
 public class APIHandler implements HttpHandler {
@@ -44,15 +45,19 @@ public class APIHandler implements HttpHandler {
 			}
 
 			// Parse the JSON object from the input stream
-			System.out.println(lines);
+//			System.out.println(lines);
 
 			Gson gson = new Gson();
 			Payload payload = gson.fromJson(lines, Payload.class);
-
+			
+			if (payload.getInputType().equals("input-file") && payload.getExt().isEmpty())
+				payload.setExt(new ExtentionService().getExtention(payload.getInput()));
+			
+//			System.out.println(payload.toString());
 			exchange.sendResponseHeaders(200, 0);
 			OutputStream outputStream = exchange.getResponseBody();
 			JSONObject response = Processor.startProcess(payload);
-			System.out.println(response.toString());
+//			System.out.println(response.toString());
 			outputStream.write(response.toString().getBytes(StandardCharsets.UTF_8));
 			outputStream.flush();
 			outputStream.close();

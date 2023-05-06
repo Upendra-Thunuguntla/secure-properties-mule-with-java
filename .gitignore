@@ -25,3 +25,5 @@ bin/
 
 processing_space/*
 !processing_space/ReadMe.md
+/target/
+/.settings/

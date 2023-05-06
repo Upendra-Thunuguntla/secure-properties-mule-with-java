@@ -97,7 +97,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     }
 
     if (inputType != "input-string") {
-        if (inputFileEle.files.length < 1 || inputTextArea.value === "") {
+        if (inputFileEle.files.length < 1 && inputTextArea.value === "") {
             alert("Please choose a File or Enter File content");
             return false;
         }
@@ -243,10 +243,14 @@ function showResult(payload, response) {
     if (payload["inputType"] == "input-string") {
         console.log(response);
         string_result_body.hidden = false;
+        file_result_body.hidden = true;
+        document.getElementById('string_result_response').scrollIntoView();
         string_result_response.innerHTML = response["response"];
     } else {
         console.log(response);
         file_result_body.hidden = false;
+        string_result_body.hidden = true;
+        document.getElementById('file_result_response').scrollIntoView();
         file_result_response.value = response["response"];
     }
 }

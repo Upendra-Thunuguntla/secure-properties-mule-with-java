@@ -18,7 +18,7 @@ public class Payload {
 		this.key = key;
 		this.inputType = inputType;
 		this.input = input;
-		this.ext = ext;
+		this.ext = ext ;
 	}
 
 	@Override

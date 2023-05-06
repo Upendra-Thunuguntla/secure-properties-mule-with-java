@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="ui"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/secure-properties-tool.jar" sourcepath="C:/Users/Muralidhar/Downloads/secure-properties-tool_source_from_Procyon"/>
 	<classpathentry kind="lib" path="lib/gson-2.10.1.jar"/>
 	<classpathentry kind="lib" path="lib/json-1.8.jar"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="lib" path="lib/secure-properties-tool.jar"/>
+	<classpathentry kind="lib" path="lib/snakeyaml-2.0.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>
