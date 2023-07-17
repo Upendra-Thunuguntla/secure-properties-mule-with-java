@@ -33,15 +33,14 @@ FROM openjdk:11-jre-slim
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the entire project directory into the container
-# COPY . /app
+# Copy the UI files and the external libraries into the container
 COPY ui /app/ui
 COPY lib /app/lib
 
 # Copy the jar file from the package stage
 COPY --from=package /app /app
 
-# Expose port 9000 for the HTTPServer
+# Expose port 9000 for the HTTP Server
 EXPOSE 9000
 
 # Set the entry point to execute the Java application
