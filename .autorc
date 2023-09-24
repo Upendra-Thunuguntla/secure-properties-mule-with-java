@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "git-tag",
+    "all-contributors",
+    "first-time-contributor",
+    "released"
+  ],
+  "owner": "Upendra-Thunuguntla",
+  "repo": "secure-properties-mule-with-java",
+  "name": "Upendra-Thunuguntla",
+  "email": "muralidhar.thunuguntla@gmail.com",
+}
